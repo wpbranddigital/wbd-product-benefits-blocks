@@ -1,0 +1,107 @@
+/**
+ * Editor-only styles for the Product Benefits block.
+ */
+
+.wp-block-commerceboost-product-benefits {
+
+	.cb-benefit-item {
+		position: relative;
+	}
+
+	.cb-benefit-item.is-cb-active {
+		outline: 1px dashed var(--wp-admin-theme-color, #3858e9);
+		outline-offset: 2px;
+	}
+
+	.cb-benefit-title.cb-is-linked {
+		color: var(--cb-link-color, inherit);
+		text-decoration: underline;
+		text-underline-offset: 0.15em;
+	}
+
+	.cb-benefit-empty {
+		grid-column: 1 / -1;
+		align-items: center;
+		text-align: center;
+		border-style: dashed;
+	}
+
+	.cb-item-actions {
+		position: absolute;
+		z-index: 2;
+		top: -14px;
+		inset-inline-end: 8px;
+		display: flex;
+		gap: 2px;
+		padding: 2px;
+		color: #1e1e1e;
+		background: #fff;
+		border: 1px solid #1e1e1e;
+		border-radius: 2px;
+		line-height: 1;
+
+		.components-button {
+			color: inherit;
+		}
+	}
+
+	// Keep device-hidden blocks editable in the canvas.
+	&.cb-hide-desktop,
+	&.cb-hide-tablet,
+	&.cb-hide-mobile {
+		display: grid !important;
+		opacity: 0.55;
+	}
+}
+
+.cb-icon-picker {
+	display: grid;
+	grid-template-columns: repeat(6, minmax(0, 1fr));
+	gap: 4px;
+	margin-bottom: 16px;
+
+	.cb-icon-picker-button.components-button {
+		justify-content: center;
+		width: 100%;
+		height: 40px;
+		padding: 8px;
+		border: 1px solid #ddd;
+
+		svg {
+			width: 20px;
+			height: 20px;
+		}
+
+		&.is-pressed {
+			border-color: var(--wp-admin-theme-color, #3858e9);
+		}
+	}
+}
+
+.cb-button-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-bottom: 16px;
+}
+
+.cb-media-preview {
+	display: block;
+	width: 48px;
+	height: 48px;
+	margin-bottom: 8px;
+	object-fit: contain;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+}
+
+.cb-item-panel-actions {
+	margin-top: 16px;
+	margin-bottom: 0;
+}
+
+.cb-panel-help {
+	margin-top: 0;
+	color: #757575;
+	font-size: 12px;
+}

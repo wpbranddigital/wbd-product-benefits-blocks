@@ -1,0 +1,32 @@
+{
+	"name": "commerceboost-blocks",
+	"version": "1.0.0",
+	"description": "Lightweight WooCommerce conversion blocks for Gutenberg.",
+	"author": "CommerceBoost",
+	"license": "GPL-2.0-or-later",
+	"private": true,
+	"main": "build/product-benefits/index.js",
+	"scripts": {
+		"build": "wp-scripts build --webpack-src-dir=src --output-path=build",
+		"start": "wp-scripts start --webpack-src-dir=src --output-path=build",
+		"format": "wp-scripts format",
+		"lint:js": "wp-scripts lint-js src",
+		"lint:css": "wp-scripts lint-style \"src/**/*.scss\"",
+		"make-pot": "wp i18n make-pot . languages/commerceboost-blocks.pot --exclude=node_modules,src,vendor",
+		"plugin-zip": "wp-scripts plugin-zip"
+	},
+	"files": [
+		"build",
+		"includes",
+		"languages",
+		"src",
+		"commerceboost-blocks.php",
+		"readme.txt",
+		"uninstall.php",
+		"package.json",
+		"README.md"
+	],
+	"devDependencies": {
+		"@wordpress/scripts": "^30.0.0"
+	}
+}

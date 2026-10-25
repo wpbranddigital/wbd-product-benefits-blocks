@@ -1,0 +1,96 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/product-benefits/editor.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************/
+/**
+ * Editor-only styles for the Product Benefits block.
+ */
+.wp-block-commerceboost-product-benefits .cb-benefit-item {
+  position: relative;
+}
+.wp-block-commerceboost-product-benefits .cb-benefit-item.is-cb-active {
+  outline: 1px dashed var(--wp-admin-theme-color, #3858e9);
+  outline-offset: 2px;
+}
+.wp-block-commerceboost-product-benefits .cb-benefit-title.cb-is-linked {
+  color: var(--cb-link-color, inherit);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+.wp-block-commerceboost-product-benefits .cb-benefit-empty {
+  grid-column: 1/-1;
+  align-items: center;
+  text-align: center;
+  border-style: dashed;
+}
+.wp-block-commerceboost-product-benefits .cb-item-actions {
+  position: absolute;
+  z-index: 2;
+  top: -14px;
+  inset-inline-end: 8px;
+  display: flex;
+  gap: 2px;
+  padding: 2px;
+  color: #1e1e1e;
+  background: #fff;
+  border: 1px solid #1e1e1e;
+  border-radius: 2px;
+  line-height: 1;
+}
+.wp-block-commerceboost-product-benefits .cb-item-actions .components-button {
+  color: inherit;
+}
+.wp-block-commerceboost-product-benefits.cb-hide-desktop, .wp-block-commerceboost-product-benefits.cb-hide-tablet, .wp-block-commerceboost-product-benefits.cb-hide-mobile {
+  display: grid !important;
+  opacity: 0.55;
+}
+
+.cb-icon-picker {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 4px;
+  margin-bottom: 16px;
+}
+.cb-icon-picker .cb-icon-picker-button.components-button {
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+.cb-icon-picker .cb-icon-picker-button.components-button svg {
+  width: 20px;
+  height: 20px;
+}
+.cb-icon-picker .cb-icon-picker-button.components-button.is-pressed {
+  border-color: var(--wp-admin-theme-color, #3858e9);
+}
+
+.cb-button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.cb-media-preview {
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
+  object-fit: contain;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+}
+
+.cb-item-panel-actions {
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+.cb-panel-help {
+  margin-top: 0;
+  color: #757575;
+  font-size: 12px;
+}
+
+/*# sourceMappingURL=index.css.map*/

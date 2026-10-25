@@ -1,0 +1,284 @@
+/*!********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/product-benefits/style.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+/**
+ * Product Benefits — frontend + editor styles.
+ *
+ * Customisable values are CSS custom properties with sensible fallbacks.
+ * Breakpoints follow WordPress core: mobile < 600px, tablet 600–781px,
+ * desktop >= 782px.
+ */
+.cb-product-benefits {
+  --cb-cols-d: 4;
+  --cb-cols-t: 2;
+  --cb-cols-m: 1;
+  --_ia: flex-start;
+  --_ta: start;
+  --_icon: 40px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(var(--cb-cols-d), minmax(0, 1fr));
+  gap: var(--cb-gap, 24px);
+  list-style: none;
+  padding-inline-start: 0;
+}
+.cb-product-benefits.cb-cols-d-1 {
+  --cb-cols-d: 1;
+}
+.cb-product-benefits.cb-cols-d-2 {
+  --cb-cols-d: 2;
+}
+.cb-product-benefits.cb-cols-d-3 {
+  --cb-cols-d: 3;
+}
+.cb-product-benefits.cb-cols-d-4 {
+  --cb-cols-d: 4;
+}
+.cb-product-benefits.cb-cols-d-6 {
+  --cb-cols-d: 6;
+}
+.cb-product-benefits.cb-cols-t-1 {
+  --cb-cols-t: 1;
+}
+.cb-product-benefits.cb-cols-t-2 {
+  --cb-cols-t: 2;
+}
+.cb-product-benefits.cb-cols-t-3 {
+  --cb-cols-t: 3;
+}
+.cb-product-benefits.cb-cols-t-4 {
+  --cb-cols-t: 4;
+}
+.cb-product-benefits.cb-cols-m-1 {
+  --cb-cols-m: 1;
+}
+.cb-product-benefits.cb-cols-m-2 {
+  --cb-cols-m: 2;
+}
+.cb-product-benefits.cb-layout-grid {
+  --_ia: center;
+  --_ta: center;
+}
+.cb-product-benefits.cb-layout-checklist, .cb-product-benefits.cb-layout-badges {
+  --_icon: 24px;
+}
+.cb-product-benefits.cb-align-left {
+  --_ia: flex-start;
+  --_ta: start;
+}
+.cb-product-benefits.cb-align-center {
+  --_ia: center;
+  --_ta: center;
+}
+.cb-product-benefits.cb-align-right {
+  --_ia: flex-end;
+  --_ta: end;
+}
+
+.cb-benefit-item {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+  min-width: 0;
+  margin: 0;
+  padding: var(--cb-item-padding, 24px);
+  color: var(--cb-item-color, inherit);
+  background: var(--cb-item-bg, transparent);
+  border: var(--cb-border-width, 1px) var(--cb-border-style, solid) var(--cb-border-color, #dcdcde);
+  border-radius: var(--cb-border-radius, 8px);
+  overflow-wrap: anywhere;
+}
+.cb-benefit-item.cb-icon-align-left {
+  --_ia: flex-start;
+}
+.cb-benefit-item.cb-icon-align-center {
+  --_ia: center;
+}
+.cb-benefit-item.cb-icon-align-right {
+  --_ia: flex-end;
+}
+.cb-benefit-item.cb-text-align-left {
+  --_ta: start;
+}
+.cb-benefit-item.cb-text-align-center {
+  --_ta: center;
+}
+.cb-benefit-item.cb-text-align-right {
+  --_ta: end;
+}
+
+.cb-benefit-icon {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  align-self: var(--_ia);
+  justify-content: center;
+  width: var(--cb-icon-size, var(--_icon));
+  height: var(--cb-icon-size, var(--_icon));
+  color: var(--cb-icon-color, #1a7f5a);
+  line-height: 0;
+}
+.cb-benefit-icon svg,
+.cb-benefit-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.cb-benefit-icon img {
+  object-fit: contain;
+}
+
+.cb-has-icon-bg .cb-benefit-icon {
+  box-sizing: content-box;
+  padding: calc(var(--cb-icon-size, var(--_icon)) * 0.35);
+  background: var(--cb-icon-bg, #e8f4ee);
+  border-radius: var(--cb-icon-radius, 50%);
+}
+
+.cb-benefit-content {
+  min-width: 0;
+  text-align: var(--_ta);
+}
+
+.cb-benefit-title {
+  margin: 0;
+  color: inherit;
+  font-size: var(--cb-title-size, 1.125em);
+  font-weight: var(--cb-title-weight, 600);
+  line-height: var(--cb-title-lh, 1.3);
+}
+
+.cb-benefit-description {
+  margin: 0.375em 0 0;
+  font-size: var(--cb-desc-size, 0.9375em);
+  font-weight: var(--cb-desc-weight, 400);
+  line-height: var(--cb-desc-lh, 1.6);
+}
+
+.cb-benefit-item a {
+  color: var(--cb-link-color, inherit);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+.cb-benefit-item a:hover {
+  text-decoration-thickness: 2px;
+}
+.cb-benefit-item a:focus-visible {
+  outline: 2px solid currentcolor;
+  outline-offset: 2px;
+}
+
+.cb-is-row .cb-benefit-item {
+  flex-direction: row;
+  align-items: flex-start;
+}
+.cb-is-row .cb-benefit-icon {
+  align-self: auto;
+}
+.cb-is-row .cb-benefit-content {
+  flex: 1 1 auto;
+}
+.cb-is-row.cb-align-right .cb-benefit-item {
+  flex-direction: row-reverse;
+}
+.cb-is-row.cb-align-center .cb-benefit-item {
+  flex-direction: column;
+  align-items: center;
+}
+.cb-is-row .cb-benefit-item.cb-icon-align-left {
+  flex-direction: row;
+  align-items: flex-start;
+}
+.cb-is-row .cb-benefit-item.cb-icon-align-right {
+  flex-direction: row-reverse;
+  align-items: flex-start;
+}
+.cb-is-row .cb-benefit-item.cb-icon-align-center {
+  flex-direction: column;
+  align-items: center;
+}
+.cb-is-row .cb-benefit-item.cb-icon-align-center .cb-benefit-content, .cb-is-row.cb-align-center .cb-benefit-content {
+  flex: none;
+  width: 100%;
+}
+
+.cb-layout-horizontal .cb-benefit-item {
+  gap: 1em;
+}
+
+.cb-layout-checklist {
+  gap: var(--cb-gap, 12px);
+}
+.cb-layout-checklist .cb-benefit-item {
+  gap: 0.625em;
+  padding: var(--cb-item-padding, 0);
+  border-width: var(--cb-border-width, 0);
+}
+.cb-layout-checklist .cb-benefit-icon {
+  margin-top: 0.1em;
+}
+.cb-layout-checklist .cb-benefit-title {
+  font-size: var(--cb-title-size, 1em);
+}
+.cb-layout-checklist .cb-benefit-description {
+  margin-top: 0.125em;
+}
+
+.cb-layout-badges {
+  gap: var(--cb-gap, 12px);
+}
+.cb-layout-badges .cb-benefit-item {
+  align-items: center;
+  gap: 0.625em;
+  padding: var(--cb-item-padding, 10px 14px);
+  border-radius: var(--cb-border-radius, 6px);
+}
+.cb-layout-badges .cb-benefit-title {
+  font-size: var(--cb-title-size, 0.9375em);
+}
+.cb-layout-badges .cb-benefit-description {
+  margin-top: 0.125em;
+  font-size: var(--cb-desc-size, 0.8125em);
+  line-height: var(--cb-desc-lh, 1.4);
+}
+
+.cb-shadow-small .cb-benefit-item {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.cb-shadow-medium .cb-benefit-item {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.cb-shadow-large .cb-benefit-item {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+}
+
+@media (max-width: 781px) {
+  .cb-product-benefits {
+    grid-template-columns: repeat(var(--cb-cols-t), minmax(0, 1fr));
+  }
+}
+@media (max-width: 599px) {
+  .cb-product-benefits {
+    grid-template-columns: repeat(var(--cb-cols-m), minmax(0, 1fr));
+  }
+  .cb-product-benefits.cb-hide-mobile {
+    display: none;
+  }
+}
+@media (min-width: 600px) and (max-width: 781px) {
+  .cb-product-benefits.cb-hide-tablet {
+    display: none;
+  }
+}
+@media (min-width: 782px) {
+  .cb-product-benefits.cb-hide-desktop {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=style-index.css.map*/

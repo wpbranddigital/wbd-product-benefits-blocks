@@ -1,0 +1,192 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "commerceboost/product-benefits",
+	"version": "1.0.0",
+	"title": "Product Benefits",
+	"category": "commerceboost",
+	"icon": "awards",
+	"description": "Display product benefits, guarantees, shipping information, returns, support and trust badges in a responsive Gutenberg layout.",
+	"keywords": [
+		"woocommerce",
+		"product benefits",
+		"trust badges",
+		"guarantee",
+		"conversion",
+		"product page",
+		"commerceboost"
+	],
+	"textdomain": "commerceboost-blocks",
+	"attributes": {
+		"items": {
+			"type": "array",
+			"items": {
+				"type": "object"
+			}
+		},
+		"layout": {
+			"type": "string",
+			"enum": [ "grid", "horizontal", "checklist", "badges" ],
+			"default": "grid"
+		},
+		"columnsDesktop": {
+			"type": "number",
+			"default": 4
+		},
+		"columnsTablet": {
+			"type": "number",
+			"default": 2
+		},
+		"columnsMobile": {
+			"type": "number",
+			"default": 1
+		},
+		"gap": {
+			"type": "number"
+		},
+		"itemPadding": {
+			"type": "number"
+		},
+		"contentAlign": {
+			"type": "string",
+			"enum": [ "", "left", "center", "right" ],
+			"default": ""
+		},
+		"titleTag": {
+			"type": "string",
+			"enum": [ "h2", "h3", "h4", "h5", "h6", "p" ],
+			"default": "h3"
+		},
+		"itemBackgroundColor": {
+			"type": "string"
+		},
+		"itemTextColor": {
+			"type": "string"
+		},
+		"iconColor": {
+			"type": "string"
+		},
+		"borderColor": {
+			"type": "string"
+		},
+		"linkColor": {
+			"type": "string"
+		},
+		"titleFontSize": {
+			"type": "number"
+		},
+		"descriptionFontSize": {
+			"type": "number"
+		},
+		"titleFontWeight": {
+			"type": "string"
+		},
+		"descriptionFontWeight": {
+			"type": "string"
+		},
+		"titleLineHeight": {
+			"type": "number"
+		},
+		"descriptionLineHeight": {
+			"type": "number"
+		},
+		"borderWidth": {
+			"type": "number"
+		},
+		"borderRadius": {
+			"type": "number"
+		},
+		"borderStyle": {
+			"type": "string"
+		},
+		"hasShadow": {
+			"type": "boolean",
+			"default": false
+		},
+		"shadowIntensity": {
+			"type": "string",
+			"enum": [ "small", "medium", "large" ],
+			"default": "small"
+		},
+		"showIcon": {
+			"type": "boolean",
+			"default": true
+		},
+		"iconSize": {
+			"type": "number"
+		},
+		"hasIconBackground": {
+			"type": "boolean",
+			"default": false
+		},
+		"iconBackgroundColor": {
+			"type": "string"
+		},
+		"iconBackgroundRadius": {
+			"type": "number"
+		},
+		"hideOnDesktop": {
+			"type": "boolean",
+			"default": false
+		},
+		"hideOnTablet": {
+			"type": "boolean",
+			"default": false
+		},
+		"hideOnMobile": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": [ "wide", "full" ],
+		"color": {
+			"background": true,
+			"text": true
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true
+		}
+	},
+	"example": {
+		"viewportWidth": 960,
+		"attributes": {
+			"items": [
+				{
+					"id": "example-1",
+					"icon": "truck",
+					"title": "Free Shipping",
+					"description": "Fast and reliable delivery on eligible orders."
+				},
+				{
+					"id": "example-2",
+					"icon": "lock",
+					"title": "Secure Payment",
+					"description": "Your payment information is protected."
+				},
+				{
+					"id": "example-3",
+					"icon": "refresh",
+					"title": "Easy Returns",
+					"description": "Simple and hassle-free return policy."
+				},
+				{
+					"id": "example-4",
+					"icon": "headset",
+					"title": "Expert Support",
+					"description": "Get help before and after your purchase."
+				}
+			]
+		}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
