@@ -55,6 +55,19 @@ WooCommerce is not required. The block works in any post, page, template or temp
 * You choose the title tag (H2–H6 or paragraph) to keep a logical heading outline.
 * Links are underlined so they are not identified by color alone, and have a visible focus outline.
 
+== Development ==
+
+Public source code repository:
+https://github.com/wpbranddigital/CommerceBoost-Blocks
+
+Build Instructions:
+
+1. npm install
+2. npm run build
+3. npm run start (development)
+
+CommerceBoost Blocks is built using @wordpress/scripts.
+
 == Installation ==
 
 1. In your WordPress admin go to **Plugins → Add New**, search for "CommerceBoost Blocks" and click **Install Now**, then **Activate**.
