@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Built-in inline SVG icon set for the Product Benefits block.
  *
  * Every icon is drawn on a 24×24 grid with a 2px round stroke so the set
@@ -14,7 +14,7 @@ import { __ } from '@wordpress/i18n';
  */
 export const ICONS = {
 	truck: {
-		label: __( 'Truck / shipping', 'commerceboost-blocks' ),
+		label: __( 'Truck / shipping', 'wbd-product-benefits-blocks' ),
 		shapes: [
 			[ 'rect', { x: '1', y: '3', width: '15', height: '13' } ],
 			[ 'polygon', { points: '16 8 20 8 23 11 23 16 16 16 16 8' } ],
@@ -23,7 +23,7 @@ export const ICONS = {
 		],
 	},
 	package: {
-		label: __( 'Package', 'commerceboost-blocks' ),
+		label: __( 'Package', 'wbd-product-benefits-blocks' ),
 		shapes: [
 			[
 				'path',
@@ -36,14 +36,14 @@ export const ICONS = {
 		],
 	},
 	shield: {
-		label: __( 'Shield', 'commerceboost-blocks' ),
+		label: __( 'Shield', 'wbd-product-benefits-blocks' ),
 		shapes: [
 			[ 'path', { d: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' } ],
 			[ 'polyline', { points: '9 12 11 14 15 10' } ],
 		],
 	},
 	lock: {
-		label: __( 'Lock / secure', 'commerceboost-blocks' ),
+		label: __( 'Lock / secure', 'wbd-product-benefits-blocks' ),
 		shapes: [
 			[
 				'rect',
@@ -60,14 +60,14 @@ export const ICONS = {
 		],
 	},
 	refresh: {
-		label: __( 'Return / refresh', 'commerceboost-blocks' ),
+		label: __( 'Return / refresh', 'wbd-product-benefits-blocks' ),
 		shapes: [
 			[ 'polyline', { points: '1 4 1 10 7 10' } ],
 			[ 'path', { d: 'M3.51 15a9 9 0 1 0 2.13-9.36L1 10' } ],
 		],
 	},
 	headset: {
-		label: __( 'Headset / support', 'commerceboost-blocks' ),
+		label: __( 'Headset / support', 'wbd-product-benefits-blocks' ),
 		shapes: [
 			[ 'path', { d: 'M3 18v-6a9 9 0 0 1 18 0v6' } ],
 			[
@@ -79,7 +79,7 @@ export const ICONS = {
 		],
 	},
 	'credit-card': {
-		label: __( 'Credit card', 'commerceboost-blocks' ),
+		label: __( 'Credit card', 'wbd-product-benefits-blocks' ),
 		shapes: [
 			[
 				'rect',
@@ -89,18 +89,18 @@ export const ICONS = {
 		],
 	},
 	'check-circle': {
-		label: __( 'Check circle', 'commerceboost-blocks' ),
+		label: __( 'Check circle', 'wbd-product-benefits-blocks' ),
 		shapes: [
 			[ 'path', { d: 'M22 11.08V12a10 10 0 1 1-5.93-9.14' } ],
 			[ 'polyline', { points: '22 4 12 14.01 9 11.01' } ],
 		],
 	},
 	check: {
-		label: __( 'Checkmark', 'commerceboost-blocks' ),
+		label: __( 'Checkmark', 'wbd-product-benefits-blocks' ),
 		shapes: [ [ 'polyline', { points: '20 6 9 17 4 12' } ] ],
 	},
 	award: {
-		label: __( 'Award / quality', 'commerceboost-blocks' ),
+		label: __( 'Award / quality', 'wbd-product-benefits-blocks' ),
 		shapes: [
 			[ 'circle', { cx: '12', cy: '8', r: '7' } ],
 			[
@@ -110,7 +110,7 @@ export const ICONS = {
 		],
 	},
 	star: {
-		label: __( 'Star', 'commerceboost-blocks' ),
+		label: __( 'Star', 'wbd-product-benefits-blocks' ),
 		shapes: [
 			[
 				'polygon',
@@ -121,7 +121,7 @@ export const ICONS = {
 		],
 	},
 	'thumbs-up': {
-		label: __( 'Thumbs up', 'commerceboost-blocks' ),
+		label: __( 'Thumbs up', 'wbd-product-benefits-blocks' ),
 		shapes: [
 			[
 				'path',
@@ -132,7 +132,7 @@ export const ICONS = {
 		],
 	},
 	gift: {
-		label: __( 'Gift', 'commerceboost-blocks' ),
+		label: __( 'Gift', 'wbd-product-benefits-blocks' ),
 		shapes: [
 			[ 'polyline', { points: '20 12 20 22 4 22 4 12' } ],
 			[ 'rect', { x: '2', y: '7', width: '20', height: '5' } ],
@@ -142,7 +142,7 @@ export const ICONS = {
 		],
 	},
 	tag: {
-		label: __( 'Price tag', 'commerceboost-blocks' ),
+		label: __( 'Price tag', 'wbd-product-benefits-blocks' ),
 		shapes: [
 			[
 				'path',
@@ -154,20 +154,20 @@ export const ICONS = {
 		],
 	},
 	clock: {
-		label: __( 'Clock', 'commerceboost-blocks' ),
+		label: __( 'Clock', 'wbd-product-benefits-blocks' ),
 		shapes: [
 			[ 'circle', { cx: '12', cy: '12', r: '10' } ],
 			[ 'polyline', { points: '12 6 12 12 16 14' } ],
 		],
 	},
 	zap: {
-		label: __( 'Lightning / fast', 'commerceboost-blocks' ),
+		label: __( 'Lightning / fast', 'wbd-product-benefits-blocks' ),
 		shapes: [
 			[ 'polygon', { points: '13 2 3 14 12 14 11 22 21 10 12 10 13 2' } ],
 		],
 	},
 	heart: {
-		label: __( 'Heart', 'commerceboost-blocks' ),
+		label: __( 'Heart', 'wbd-product-benefits-blocks' ),
 		shapes: [
 			[
 				'path',
@@ -178,7 +178,7 @@ export const ICONS = {
 		],
 	},
 	globe: {
-		label: __( 'Globe / worldwide', 'commerceboost-blocks' ),
+		label: __( 'Globe / worldwide', 'wbd-product-benefits-blocks' ),
 		shapes: [
 			[ 'circle', { cx: '12', cy: '12', r: '10' } ],
 			[ 'line', { x1: '2', y1: '12', x2: '22', y2: '12' } ],

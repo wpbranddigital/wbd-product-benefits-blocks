@@ -7,7 +7,7 @@
  * includes/blocks/ that exposes a static register() method, require it in
  * load_dependencies() and add its class name to get_block_classes().
  *
- * @package CommerceBoost_Blocks
+ * @package WBD_Product_Benefits_Blocks
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -17,26 +17,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Main plugin controller.
  */
-final class CommerceBoost_Blocks {
+final class WBD_Product_Benefits_Blocks {
 
 	/**
-	 * Block category slug shared by every CommerceBoost block.
+	 * Block category slug shared by every WBD block.
 	 *
 	 * @var string
 	 */
-	const CATEGORY = 'commerceboost';
+	const CATEGORY = 'wbd-product-benefits';
 
 	/**
 	 * Singleton instance.
 	 *
-	 * @var CommerceBoost_Blocks|null
+	 * @var WBD_Product_Benefits_Blocks|null
 	 */
 	private static $instance = null;
 
 	/**
 	 * Returns the single plugin instance.
 	 *
-	 * @return CommerceBoost_Blocks
+	 * @return WBD_Product_Benefits_Blocks
 	 */
 	public static function instance() {
 		if ( null === self::$instance ) {
@@ -59,7 +59,7 @@ final class CommerceBoost_Blocks {
 	 * Loads block module files.
 	 */
 	private function load_dependencies() {
-		require_once COMMERCEBOOST_BLOCKS_PATH . 'includes/blocks/class-product-benefits.php';
+		require_once WBD_PRODUCT_BENEFITS_BLOCKS_PATH . 'includes/blocks/class-product-benefits.php';
 	}
 
 	/**
@@ -69,7 +69,7 @@ final class CommerceBoost_Blocks {
 	 */
 	private function get_block_classes() {
 		return array(
-			'CommerceBoost_Blocks_Product_Benefits',
+			'WBD_Product_Benefits_Blocks_Product_Benefits',
 		);
 	}
 
@@ -85,7 +85,7 @@ final class CommerceBoost_Blocks {
 	}
 
 	/**
-	 * Adds the "CommerceBoost" category to the block inserter.
+	 * Adds the "WBD Product Benefits" category to the block inserter.
 	 *
 	 * @param array $categories Registered block categories.
 	 * @return array
@@ -99,7 +99,7 @@ final class CommerceBoost_Blocks {
 
 		$categories[] = array(
 			'slug'  => self::CATEGORY,
-			'title' => esc_html__( 'CommerceBoost', 'commerceboost-blocks' ),
+			'title' => esc_html__( 'WBD Product Benefits', 'wbd-product-benefits-blocks' ),
 			'icon'  => null,
 		);
 
@@ -113,6 +113,7 @@ final class CommerceBoost_Blocks {
 	 * @return string
 	 */
 	public static function get_block_build_path( $block_dir ) {
-		return COMMERCEBOOST_BLOCKS_PATH . 'build/' . $block_dir;
+		return WBD_PRODUCT_BENEFITS_BLOCKS_PATH . 'build/' . $block_dir;
 	}
 }
+

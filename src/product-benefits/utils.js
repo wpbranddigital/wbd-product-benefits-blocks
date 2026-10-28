@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Shared helpers used by both edit() and save() so the editor preview and the
  * saved frontend markup always produce identical classes and style variables.
  */
@@ -64,34 +64,34 @@ export function getDefaultItems() {
 	return [
 		createItem( {
 			icon: 'truck',
-			title: __( 'Free Shipping', 'commerceboost-blocks' ),
+			title: __( 'Free Shipping', 'wbd-product-benefits-blocks' ),
 			description: __(
 				'Fast and reliable delivery on eligible orders.',
-				'commerceboost-blocks'
+				'wbd-product-benefits-blocks'
 			),
 		} ),
 		createItem( {
 			icon: 'lock',
-			title: __( 'Secure Payment', 'commerceboost-blocks' ),
+			title: __( 'Secure Payment', 'wbd-product-benefits-blocks' ),
 			description: __(
 				'Your payment information is protected.',
-				'commerceboost-blocks'
+				'wbd-product-benefits-blocks'
 			),
 		} ),
 		createItem( {
 			icon: 'refresh',
-			title: __( 'Easy Returns', 'commerceboost-blocks' ),
+			title: __( 'Easy Returns', 'wbd-product-benefits-blocks' ),
 			description: __(
 				'Simple and hassle-free return policy.',
-				'commerceboost-blocks'
+				'wbd-product-benefits-blocks'
 			),
 		} ),
 		createItem( {
 			icon: 'headset',
-			title: __( 'Expert Support', 'commerceboost-blocks' ),
+			title: __( 'Expert Support', 'wbd-product-benefits-blocks' ),
 			description: __(
 				'Get help before and after your purchase.',
-				'commerceboost-blocks'
+				'wbd-product-benefits-blocks'
 			),
 		} ),
 	];

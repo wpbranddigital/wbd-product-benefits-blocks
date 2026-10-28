@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Editor component for the Product Benefits block.
  */
 import { __, sprintf } from '@wordpress/i18n';
@@ -62,7 +62,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		const next = [
 			...list,
 			createItem( {
-				title: __( 'New benefit', 'commerceboost-blocks' ),
+				title: __( 'New benefit', 'wbd-product-benefits-blocks' ),
 			} ),
 		];
 		setItems( next );
@@ -112,7 +112,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 				<ToolbarGroup>
 					<ToolbarButton
 						icon="plus-alt2"
-						label={ __( 'Add benefit', 'commerceboost-blocks' ) }
+						label={ __( 'Add benefit', 'wbd-product-benefits-blocks' ) }
 						onClick={ addItem }
 					/>
 				</ToolbarGroup>
@@ -134,7 +134,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<p>
 							{ __(
 								'This block has no benefits yet.',
-								'commerceboost-blocks'
+								'wbd-product-benefits-blocks'
 							) }
 						</p>
 						<Button
@@ -142,7 +142,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							icon="plus-alt2"
 							onClick={ addItem }
 						>
-							{ __( 'Add benefit', 'commerceboost-blocks' ) }
+							{ __( 'Add benefit', 'wbd-product-benefits-blocks' ) }
 						</Button>
 					</li>
 				) }
@@ -168,7 +168,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										/* translators: %d: benefit position. */
 										__(
 											'Benefit %d actions',
-											'commerceboost-blocks'
+											'wbd-product-benefits-blocks'
 										),
 										position
 									) }
@@ -178,7 +178,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										icon="arrow-up-alt2"
 										label={ __(
 											'Move up',
-											'commerceboost-blocks'
+											'wbd-product-benefits-blocks'
 										) }
 										onClick={ () => moveItem( index, -1 ) }
 										aria-disabled={ index === 0 }
@@ -188,7 +188,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										icon="arrow-down-alt2"
 										label={ __(
 											'Move down',
-											'commerceboost-blocks'
+											'wbd-product-benefits-blocks'
 										) }
 										onClick={ () => moveItem( index, 1 ) }
 										aria-disabled={
@@ -200,7 +200,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										icon="admin-page"
 										label={ __(
 											'Duplicate',
-											'commerceboost-blocks'
+											'wbd-product-benefits-blocks'
 										) }
 										onClick={ () => duplicateItem( index ) }
 									/>
@@ -209,7 +209,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										icon="trash"
 										label={ __(
 											'Remove',
-											'commerceboost-blocks'
+											'wbd-product-benefits-blocks'
 										) }
 										onClick={ () => removeItem( index ) }
 										isDestructive
@@ -235,7 +235,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Benefit title…',
-										'commerceboost-blocks'
+										'wbd-product-benefits-blocks'
 									) }
 									allowedFormats={ [
 										'core/bold',
@@ -245,7 +245,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										/* translators: %d: benefit position. */
 										__(
 											'Benefit %d title',
-											'commerceboost-blocks'
+											'wbd-product-benefits-blocks'
 										),
 										position
 									) }
@@ -261,7 +261,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Benefit description…',
-										'commerceboost-blocks'
+										'wbd-product-benefits-blocks'
 									) }
 									allowedFormats={ [
 										'core/bold',
@@ -272,7 +272,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										/* translators: %d: benefit position. */
 										__(
 											'Benefit %d description',
-											'commerceboost-blocks'
+											'wbd-product-benefits-blocks'
 										),
 										position
 									) }

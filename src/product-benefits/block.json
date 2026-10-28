@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "commerceboost/product-benefits",
-	"version": "1.0.0",
+	"name": "wbd/product-benefits",
+	"version": "1.0.1",
 	"title": "Product Benefits",
-	"category": "commerceboost",
+	"category": "wbd-product-benefits",
 	"icon": "awards",
 	"description": "Display product benefits, guarantees, shipping information, returns, support and trust badges in a responsive Gutenberg layout.",
 	"keywords": [
@@ -14,9 +14,10 @@
 		"guarantee",
 		"conversion",
 		"product page",
-		"commerceboost"
+		"wbd",
+		"wbd product benefits"
 	],
-	"textdomain": "commerceboost-blocks",
+	"textdomain": "wbd-product-benefits-blocks",
 	"attributes": {
 		"items": {
 			"type": "array",

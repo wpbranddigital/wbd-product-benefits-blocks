@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Sidebar (Inspector) controls for the Product Benefits block.
  */
 import { createElement, Fragment } from '@wordpress/element';
@@ -38,22 +38,22 @@ const columnOptions = ( list ) =>
 	} ) );
 
 const ALIGN_OPTIONS = [
-	{ label: __( 'Left', 'commerceboost-blocks' ), value: 'left' },
-	{ label: __( 'Center', 'commerceboost-blocks' ), value: 'center' },
-	{ label: __( 'Right', 'commerceboost-blocks' ), value: 'right' },
+	{ label: __( 'Left', 'wbd-product-benefits-blocks' ), value: 'left' },
+	{ label: __( 'Center', 'wbd-product-benefits-blocks' ), value: 'center' },
+	{ label: __( 'Right', 'wbd-product-benefits-blocks' ), value: 'right' },
 ];
 
 const WEIGHT_OPTIONS = [
-	{ label: __( 'Default', 'commerceboost-blocks' ), value: '' },
+	{ label: __( 'Default', 'wbd-product-benefits-blocks' ), value: '' },
 	...FONT_WEIGHTS.map( ( weight ) => ( { label: weight, value: weight } ) ),
 ];
 
 const BORDER_STYLE_LABELS = {
-	none: __( 'None', 'commerceboost-blocks' ),
-	solid: __( 'Solid', 'commerceboost-blocks' ),
-	dashed: __( 'Dashed', 'commerceboost-blocks' ),
-	dotted: __( 'Dotted', 'commerceboost-blocks' ),
-	double: __( 'Double', 'commerceboost-blocks' ),
+	none: __( 'None', 'wbd-product-benefits-blocks' ),
+	solid: __( 'Solid', 'wbd-product-benefits-blocks' ),
+	dashed: __( 'Dashed', 'wbd-product-benefits-blocks' ),
+	dotted: __( 'Dotted', 'wbd-product-benefits-blocks' ),
+	double: __( 'Double', 'wbd-product-benefits-blocks' ),
 };
 
 const stripTags = ( html ) =>
@@ -75,14 +75,14 @@ function IconPicker( { value, onChange, id } ) {
 	return (
 		<BaseControl
 			id={ id }
-			label={ __( 'Icon', 'commerceboost-blocks' ) }
+			label={ __( 'Icon', 'wbd-product-benefits-blocks' ) }
 			__nextHasNoMarginBottom
 		>
 			<div
 				id={ id }
 				className="cb-icon-picker"
 				role="group"
-				aria-label={ __( 'Choose an icon', 'commerceboost-blocks' ) }
+				aria-label={ __( 'Choose an icon', 'wbd-product-benefits-blocks' ) }
 			>
 				{ Object.keys( ICONS ).map( ( key ) => (
 					<Button
@@ -131,7 +131,7 @@ function ItemPanel( {
 } ) {
 	const position = index + 1;
 	const label =
-		stripTags( item.title ) || __( '(Untitled)', 'commerceboost-blocks' );
+		stripTags( item.title ) || __( '(Untitled)', 'wbd-product-benefits-blocks' );
 	const update = ( changes ) => updateItem( index, changes );
 	const isChecklist = 'checklist' === layout;
 
@@ -139,7 +139,7 @@ function ItemPanel( {
 		<PanelBody
 			title={ sprintf(
 				/* translators: 1: benefit position, 2: benefit title. */
-				__( '%1$d. %2$s', 'commerceboost-blocks' ),
+				__( '%1$d. %2$s', 'wbd-product-benefits-blocks' ),
 				position,
 				label
 			) }
@@ -151,7 +151,7 @@ function ItemPanel( {
 				<Notice status="info" isDismissible={ false }>
 					{ __(
 						'The checklist layout always uses a checkmark icon. Switch layout to use a custom icon or image.',
-						'commerceboost-blocks'
+						'wbd-product-benefits-blocks'
 					) }
 				</Notice>
 			) : (
@@ -169,14 +169,14 @@ function ItemPanel( {
 							id={ `cb-media-${ item.id || index }` }
 							label={ __(
 								'Custom icon or image',
-								'commerceboost-blocks'
+								'wbd-product-benefits-blocks'
 							) }
 							help={
 								item.mediaUrl
 									? undefined
 									: __(
 											'Optional. Replaces the built-in icon. Square SVG or PNG images work best.',
-											'commerceboost-blocks'
+											'wbd-product-benefits-blocks'
 									  )
 							}
 							__nextHasNoMarginBottom
@@ -209,11 +209,11 @@ function ItemPanel( {
 											{ item.mediaUrl
 												? __(
 														'Replace image',
-														'commerceboost-blocks'
+														'wbd-product-benefits-blocks'
 												  )
 												: __(
 														'Upload / select image',
-														'commerceboost-blocks'
+														'wbd-product-benefits-blocks'
 												  ) }
 										</Button>
 									) }
@@ -232,7 +232,7 @@ function ItemPanel( {
 									>
 										{ __(
 											'Remove image',
-											'commerceboost-blocks'
+											'wbd-product-benefits-blocks'
 										) }
 									</Button>
 								) }
@@ -244,11 +244,11 @@ function ItemPanel( {
 						<TextControl
 							label={ __(
 								'Image alternative text',
-								'commerceboost-blocks'
+								'wbd-product-benefits-blocks'
 							) }
 							help={ __(
 								'Describe the image if it adds meaning. Leave empty if it is purely decorative.',
-								'commerceboost-blocks'
+								'wbd-product-benefits-blocks'
 							) }
 							value={ item.mediaAlt || '' }
 							onChange={ ( mediaAlt ) => update( { mediaAlt } ) }
@@ -260,7 +260,7 @@ function ItemPanel( {
 			) }
 
 			<TextControl
-				label={ __( 'Link URL (optional)', 'commerceboost-blocks' ) }
+				label={ __( 'Link URL (optional)', 'wbd-product-benefits-blocks' ) }
 				type="url"
 				value={ item.url || '' }
 				placeholder="https://"
@@ -272,7 +272,7 @@ function ItemPanel( {
 				} }
 				help={ __(
 					'The benefit title becomes a link.',
-					'commerceboost-blocks'
+					'wbd-product-benefits-blocks'
 				) }
 				__nextHasNoMarginBottom
 				__next40pxDefaultSize
@@ -282,7 +282,7 @@ function ItemPanel( {
 				<ToggleControl
 					label={ __(
 						'Open link in a new tab',
-						'commerceboost-blocks'
+						'wbd-product-benefits-blocks'
 					) }
 					checked={ !! item.opensInNewTab }
 					onChange={ ( opensInNewTab ) =>
@@ -293,11 +293,11 @@ function ItemPanel( {
 			) }
 
 			<SelectControl
-				label={ __( 'Icon alignment', 'commerceboost-blocks' ) }
+				label={ __( 'Icon alignment', 'wbd-product-benefits-blocks' ) }
 				value={ item.iconAlign || '' }
 				options={ [
 					{
-						label: __( 'Block default', 'commerceboost-blocks' ),
+						label: __( 'Block default', 'wbd-product-benefits-blocks' ),
 						value: '',
 					},
 					...ALIGN_OPTIONS,
@@ -308,11 +308,11 @@ function ItemPanel( {
 			/>
 
 			<SelectControl
-				label={ __( 'Text alignment', 'commerceboost-blocks' ) }
+				label={ __( 'Text alignment', 'wbd-product-benefits-blocks' ) }
 				value={ item.textAlign || '' }
 				options={ [
 					{
-						label: __( 'Block default', 'commerceboost-blocks' ),
+						label: __( 'Block default', 'wbd-product-benefits-blocks' ),
 						value: '',
 					},
 					...ALIGN_OPTIONS,
@@ -327,7 +327,7 @@ function ItemPanel( {
 				role="group"
 				aria-label={ sprintf(
 					/* translators: %d: benefit position. */
-					__( 'Benefit %d actions', 'commerceboost-blocks' ),
+					__( 'Benefit %d actions', 'wbd-product-benefits-blocks' ),
 					position
 				) }
 			>
@@ -337,7 +337,7 @@ function ItemPanel( {
 					onClick={ () => moveItem( index, -1 ) }
 					aria-disabled={ index === 0 }
 				>
-					{ __( 'Move up', 'commerceboost-blocks' ) }
+					{ __( 'Move up', 'wbd-product-benefits-blocks' ) }
 				</Button>
 				<Button
 					variant="secondary"
@@ -345,14 +345,14 @@ function ItemPanel( {
 					onClick={ () => moveItem( index, 1 ) }
 					aria-disabled={ index === total - 1 }
 				>
-					{ __( 'Move down', 'commerceboost-blocks' ) }
+					{ __( 'Move down', 'wbd-product-benefits-blocks' ) }
 				</Button>
 				<Button
 					variant="secondary"
 					size="compact"
 					onClick={ () => duplicateItem( index ) }
 				>
-					{ __( 'Duplicate', 'commerceboost-blocks' ) }
+					{ __( 'Duplicate', 'wbd-product-benefits-blocks' ) }
 				</Button>
 				<Button
 					variant="secondary"
@@ -360,7 +360,7 @@ function ItemPanel( {
 					isDestructive
 					onClick={ () => removeItem( index ) }
 				>
-					{ __( 'Remove', 'commerceboost-blocks' ) }
+					{ __( 'Remove', 'wbd-product-benefits-blocks' ) }
 				</Button>
 			</div>
 		</PanelBody>
@@ -430,27 +430,27 @@ export default function BenefitsInspectorControls( {
 		{
 			value: itemBackgroundColor,
 			onChange: set( 'itemBackgroundColor' ),
-			label: __( 'Item background', 'commerceboost-blocks' ),
+			label: __( 'Item background', 'wbd-product-benefits-blocks' ),
 		},
 		{
 			value: itemTextColor,
 			onChange: set( 'itemTextColor' ),
-			label: __( 'Item text', 'commerceboost-blocks' ),
+			label: __( 'Item text', 'wbd-product-benefits-blocks' ),
 		},
 		{
 			value: iconColor,
 			onChange: set( 'iconColor' ),
-			label: __( 'Icon', 'commerceboost-blocks' ),
+			label: __( 'Icon', 'wbd-product-benefits-blocks' ),
 		},
 		{
 			value: borderColor,
 			onChange: set( 'borderColor' ),
-			label: __( 'Border', 'commerceboost-blocks' ),
+			label: __( 'Border', 'wbd-product-benefits-blocks' ),
 		},
 		{
 			value: linkColor,
 			onChange: set( 'linkColor' ),
-			label: __( 'Link', 'commerceboost-blocks' ),
+			label: __( 'Link', 'wbd-product-benefits-blocks' ),
 		},
 	];
 
@@ -458,24 +458,24 @@ export default function BenefitsInspectorControls( {
 		colorSettings.push( {
 			value: iconBackgroundColor,
 			onChange: set( 'iconBackgroundColor' ),
-			label: __( 'Icon background', 'commerceboost-blocks' ),
+			label: __( 'Icon background', 'wbd-product-benefits-blocks' ),
 		} );
 	}
 
 	return (
 		<InspectorControls>
 			<PanelBody
-				title={ __( 'Benefits', 'commerceboost-blocks' ) }
+				title={ __( 'Benefits', 'wbd-product-benefits-blocks' ) }
 				initialOpen
 			>
 				<p className="cb-panel-help">
 					{ __(
 						'Edit titles and descriptions directly in the block. Use the panels below for icons, links and order.',
-						'commerceboost-blocks'
+						'wbd-product-benefits-blocks'
 					) }
 				</p>
 				<Button variant="primary" icon="plus-alt2" onClick={ addItem }>
-					{ __( 'Add benefit', 'commerceboost-blocks' ) }
+					{ __( 'Add benefit', 'wbd-product-benefits-blocks' ) }
 				</Button>
 			</PanelBody>
 
@@ -498,27 +498,27 @@ export default function BenefitsInspectorControls( {
 			) ) }
 
 			<PanelBody
-				title={ __( 'Layout', 'commerceboost-blocks' ) }
+				title={ __( 'Layout', 'wbd-product-benefits-blocks' ) }
 				initialOpen={ false }
 			>
 				<SelectControl
-					label={ __( 'Layout type', 'commerceboost-blocks' ) }
+					label={ __( 'Layout type', 'wbd-product-benefits-blocks' ) }
 					value={ layout }
 					options={ [
 						{
-							label: __( 'Grid', 'commerceboost-blocks' ),
+							label: __( 'Grid', 'wbd-product-benefits-blocks' ),
 							value: 'grid',
 						},
 						{
-							label: __( 'Horizontal', 'commerceboost-blocks' ),
+							label: __( 'Horizontal', 'wbd-product-benefits-blocks' ),
 							value: 'horizontal',
 						},
 						{
-							label: __( 'Checklist', 'commerceboost-blocks' ),
+							label: __( 'Checklist', 'wbd-product-benefits-blocks' ),
 							value: 'checklist',
 						},
 						{
-							label: __( 'Trust badges', 'commerceboost-blocks' ),
+							label: __( 'Trust badges', 'wbd-product-benefits-blocks' ),
 							value: 'badges',
 						},
 					] }
@@ -527,7 +527,7 @@ export default function BenefitsInspectorControls( {
 					__next40pxDefaultSize
 				/>
 				<SelectControl
-					label={ __( 'Desktop columns', 'commerceboost-blocks' ) }
+					label={ __( 'Desktop columns', 'wbd-product-benefits-blocks' ) }
 					value={ String( columnsDesktop ) }
 					options={ columnOptions( DESKTOP_COLUMNS ) }
 					onChange={ setNumber( 'columnsDesktop' ) }
@@ -535,7 +535,7 @@ export default function BenefitsInspectorControls( {
 					__next40pxDefaultSize
 				/>
 				<SelectControl
-					label={ __( 'Tablet columns', 'commerceboost-blocks' ) }
+					label={ __( 'Tablet columns', 'wbd-product-benefits-blocks' ) }
 					value={ String( columnsTablet ) }
 					options={ columnOptions( TABLET_COLUMNS ) }
 					onChange={ setNumber( 'columnsTablet' ) }
@@ -543,7 +543,7 @@ export default function BenefitsInspectorControls( {
 					__next40pxDefaultSize
 				/>
 				<SelectControl
-					label={ __( 'Mobile columns', 'commerceboost-blocks' ) }
+					label={ __( 'Mobile columns', 'wbd-product-benefits-blocks' ) }
 					value={ String( columnsMobile ) }
 					options={ columnOptions( MOBILE_COLUMNS ) }
 					onChange={ setNumber( 'columnsMobile' ) }
@@ -553,7 +553,7 @@ export default function BenefitsInspectorControls( {
 				<RangeControl
 					label={ __(
 						'Gap between items (px)',
-						'commerceboost-blocks'
+						'wbd-product-benefits-blocks'
 					) }
 					value={ gap }
 					onChange={ setNumber( 'gap' ) }
@@ -565,7 +565,7 @@ export default function BenefitsInspectorControls( {
 					__next40pxDefaultSize
 				/>
 				<RangeControl
-					label={ __( 'Item padding (px)', 'commerceboost-blocks' ) }
+					label={ __( 'Item padding (px)', 'wbd-product-benefits-blocks' ) }
 					value={ itemPadding }
 					onChange={ setNumber( 'itemPadding' ) }
 					min={ 0 }
@@ -576,13 +576,13 @@ export default function BenefitsInspectorControls( {
 					__next40pxDefaultSize
 				/>
 				<SelectControl
-					label={ __( 'Content alignment', 'commerceboost-blocks' ) }
+					label={ __( 'Content alignment', 'wbd-product-benefits-blocks' ) }
 					value={ contentAlign }
 					options={ [
 						{
 							label: __(
 								'Layout default',
-								'commerceboost-blocks'
+								'wbd-product-benefits-blocks'
 							),
 							value: '',
 						},
@@ -593,7 +593,7 @@ export default function BenefitsInspectorControls( {
 					__next40pxDefaultSize
 				/>
 				<SelectControl
-					label={ __( 'Title HTML tag', 'commerceboost-blocks' ) }
+					label={ __( 'Title HTML tag', 'wbd-product-benefits-blocks' ) }
 					value={ titleTag }
 					options={ [
 						{ label: 'H2', value: 'h2' },
@@ -604,7 +604,7 @@ export default function BenefitsInspectorControls( {
 						{
 							label: __(
 								'Paragraph (no heading)',
-								'commerceboost-blocks'
+								'wbd-product-benefits-blocks'
 							),
 							value: 'p',
 						},
@@ -612,7 +612,7 @@ export default function BenefitsInspectorControls( {
 					onChange={ set( 'titleTag' ) }
 					help={ __(
 						'Pick a heading one level below the section heading above this block, or "Paragraph" for short trust badges, to keep the page outline logical.',
-						'commerceboost-blocks'
+						'wbd-product-benefits-blocks'
 					) }
 					__nextHasNoMarginBottom
 					__next40pxDefaultSize
@@ -620,7 +620,7 @@ export default function BenefitsInspectorControls( {
 			</PanelBody>
 
 			<PanelColorSettings
-				title={ __( 'Item colors', 'commerceboost-blocks' ) }
+				title={ __( 'Item colors', 'wbd-product-benefits-blocks' ) }
 				initialOpen={ false }
 				colorSettings={ colorSettings }
 			>
@@ -631,13 +631,13 @@ export default function BenefitsInspectorControls( {
 			</PanelColorSettings>
 
 			<PanelBody
-				title={ __( 'Item typography', 'commerceboost-blocks' ) }
+				title={ __( 'Item typography', 'wbd-product-benefits-blocks' ) }
 				initialOpen={ false }
 			>
 				<RangeControl
 					label={ __(
 						'Title font size (px)',
-						'commerceboost-blocks'
+						'wbd-product-benefits-blocks'
 					) }
 					value={ titleFontSize }
 					onChange={ setNumber( 'titleFontSize' ) }
@@ -649,7 +649,7 @@ export default function BenefitsInspectorControls( {
 					__next40pxDefaultSize
 				/>
 				<SelectControl
-					label={ __( 'Title font weight', 'commerceboost-blocks' ) }
+					label={ __( 'Title font weight', 'wbd-product-benefits-blocks' ) }
 					value={ titleFontWeight || '' }
 					options={ WEIGHT_OPTIONS }
 					onChange={ setOptional( 'titleFontWeight' ) }
@@ -657,7 +657,7 @@ export default function BenefitsInspectorControls( {
 					__next40pxDefaultSize
 				/>
 				<RangeControl
-					label={ __( 'Title line height', 'commerceboost-blocks' ) }
+					label={ __( 'Title line height', 'wbd-product-benefits-blocks' ) }
 					value={ titleLineHeight }
 					onChange={ setNumber( 'titleLineHeight' ) }
 					min={ 0.8 }
@@ -671,7 +671,7 @@ export default function BenefitsInspectorControls( {
 				<RangeControl
 					label={ __(
 						'Description font size (px)',
-						'commerceboost-blocks'
+						'wbd-product-benefits-blocks'
 					) }
 					value={ descriptionFontSize }
 					onChange={ setNumber( 'descriptionFontSize' ) }
@@ -685,7 +685,7 @@ export default function BenefitsInspectorControls( {
 				<SelectControl
 					label={ __(
 						'Description font weight',
-						'commerceboost-blocks'
+						'wbd-product-benefits-blocks'
 					) }
 					value={ descriptionFontWeight || '' }
 					options={ WEIGHT_OPTIONS }
@@ -696,7 +696,7 @@ export default function BenefitsInspectorControls( {
 				<RangeControl
 					label={ __(
 						'Description line height',
-						'commerceboost-blocks'
+						'wbd-product-benefits-blocks'
 					) }
 					value={ descriptionLineHeight }
 					onChange={ setNumber( 'descriptionLineHeight' ) }
@@ -711,11 +711,11 @@ export default function BenefitsInspectorControls( {
 			</PanelBody>
 
 			<PanelBody
-				title={ __( 'Border & shape', 'commerceboost-blocks' ) }
+				title={ __( 'Border & shape', 'wbd-product-benefits-blocks' ) }
 				initialOpen={ false }
 			>
 				<RangeControl
-					label={ __( 'Border width (px)', 'commerceboost-blocks' ) }
+					label={ __( 'Border width (px)', 'wbd-product-benefits-blocks' ) }
 					value={ borderWidth }
 					onChange={ setNumber( 'borderWidth' ) }
 					min={ 0 }
@@ -726,11 +726,11 @@ export default function BenefitsInspectorControls( {
 					__next40pxDefaultSize
 				/>
 				<SelectControl
-					label={ __( 'Border style', 'commerceboost-blocks' ) }
+					label={ __( 'Border style', 'wbd-product-benefits-blocks' ) }
 					value={ borderStyle || '' }
 					options={ [
 						{
-							label: __( 'Default', 'commerceboost-blocks' ),
+							label: __( 'Default', 'wbd-product-benefits-blocks' ),
 							value: '',
 						},
 						...BORDER_STYLES.map( ( value ) => ( {
@@ -743,7 +743,7 @@ export default function BenefitsInspectorControls( {
 					__next40pxDefaultSize
 				/>
 				<RangeControl
-					label={ __( 'Border radius (px)', 'commerceboost-blocks' ) }
+					label={ __( 'Border radius (px)', 'wbd-product-benefits-blocks' ) }
 					value={ borderRadius }
 					onChange={ setNumber( 'borderRadius' ) }
 					min={ 0 }
@@ -754,7 +754,7 @@ export default function BenefitsInspectorControls( {
 					__next40pxDefaultSize
 				/>
 				<ToggleControl
-					label={ __( 'Box shadow', 'commerceboost-blocks' ) }
+					label={ __( 'Box shadow', 'wbd-product-benefits-blocks' ) }
 					checked={ !! hasShadow }
 					onChange={ set( 'hasShadow' ) }
 					__nextHasNoMarginBottom
@@ -763,20 +763,20 @@ export default function BenefitsInspectorControls( {
 					<SelectControl
 						label={ __(
 							'Shadow intensity',
-							'commerceboost-blocks'
+							'wbd-product-benefits-blocks'
 						) }
 						value={ shadowIntensity }
 						options={ [
 							{
-								label: __( 'Small', 'commerceboost-blocks' ),
+								label: __( 'Small', 'wbd-product-benefits-blocks' ),
 								value: 'small',
 							},
 							{
-								label: __( 'Medium', 'commerceboost-blocks' ),
+								label: __( 'Medium', 'wbd-product-benefits-blocks' ),
 								value: 'medium',
 							},
 							{
-								label: __( 'Large', 'commerceboost-blocks' ),
+								label: __( 'Large', 'wbd-product-benefits-blocks' ),
 								value: 'large',
 							},
 						] }
@@ -788,11 +788,11 @@ export default function BenefitsInspectorControls( {
 			</PanelBody>
 
 			<PanelBody
-				title={ __( 'Icon', 'commerceboost-blocks' ) }
+				title={ __( 'Icon', 'wbd-product-benefits-blocks' ) }
 				initialOpen={ false }
 			>
 				<ToggleControl
-					label={ __( 'Show icons', 'commerceboost-blocks' ) }
+					label={ __( 'Show icons', 'wbd-product-benefits-blocks' ) }
 					checked={ false !== showIcon }
 					onChange={ set( 'showIcon' ) }
 					__nextHasNoMarginBottom
@@ -802,7 +802,7 @@ export default function BenefitsInspectorControls( {
 						<RangeControl
 							label={ __(
 								'Icon size (px)',
-								'commerceboost-blocks'
+								'wbd-product-benefits-blocks'
 							) }
 							value={ iconSize }
 							onChange={ setNumber( 'iconSize' ) }
@@ -820,13 +820,13 @@ export default function BenefitsInspectorControls( {
 						<ToggleControl
 							label={ __(
 								'Icon background',
-								'commerceboost-blocks'
+								'wbd-product-benefits-blocks'
 							) }
 							checked={ !! hasIconBackground }
 							onChange={ set( 'hasIconBackground' ) }
 							help={ __(
 								'Set its color in "Item colors".',
-								'commerceboost-blocks'
+								'wbd-product-benefits-blocks'
 							) }
 							__nextHasNoMarginBottom
 						/>
@@ -834,7 +834,7 @@ export default function BenefitsInspectorControls( {
 							<RangeControl
 								label={ __(
 									'Icon background radius (%)',
-									'commerceboost-blocks'
+									'wbd-product-benefits-blocks'
 								) }
 								value={ iconBackgroundRadius }
 								onChange={ setNumber( 'iconBackgroundRadius' ) }
@@ -851,34 +851,34 @@ export default function BenefitsInspectorControls( {
 			</PanelBody>
 
 			<PanelBody
-				title={ __( 'Visibility', 'commerceboost-blocks' ) }
+				title={ __( 'Visibility', 'wbd-product-benefits-blocks' ) }
 				initialOpen={ false }
 			>
 				<ToggleControl
-					label={ __( 'Hide on desktop', 'commerceboost-blocks' ) }
+					label={ __( 'Hide on desktop', 'wbd-product-benefits-blocks' ) }
 					help={ __(
 						'Screens 782px and wider.',
-						'commerceboost-blocks'
+						'wbd-product-benefits-blocks'
 					) }
 					checked={ !! hideOnDesktop }
 					onChange={ set( 'hideOnDesktop' ) }
 					__nextHasNoMarginBottom
 				/>
 				<ToggleControl
-					label={ __( 'Hide on tablet', 'commerceboost-blocks' ) }
+					label={ __( 'Hide on tablet', 'wbd-product-benefits-blocks' ) }
 					help={ __(
 						'Screens from 600px to 781px.',
-						'commerceboost-blocks'
+						'wbd-product-benefits-blocks'
 					) }
 					checked={ !! hideOnTablet }
 					onChange={ set( 'hideOnTablet' ) }
 					__nextHasNoMarginBottom
 				/>
 				<ToggleControl
-					label={ __( 'Hide on mobile', 'commerceboost-blocks' ) }
+					label={ __( 'Hide on mobile', 'wbd-product-benefits-blocks' ) }
 					help={ __(
 						'Screens narrower than 600px.',
-						'commerceboost-blocks'
+						'wbd-product-benefits-blocks'
 					) }
 					checked={ !! hideOnMobile }
 					onChange={ set( 'hideOnMobile' ) }
@@ -888,7 +888,7 @@ export default function BenefitsInspectorControls( {
 					<Notice status="info" isDismissible={ false }>
 						{ __(
 							'Hidden blocks stay visible but faded in the editor so you can keep editing them.',
-							'commerceboost-blocks'
+							'wbd-product-benefits-blocks'
 						) }
 					</Notice>
 				) }

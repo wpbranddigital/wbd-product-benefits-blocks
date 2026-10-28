@@ -1,8 +1,8 @@
 {
-	"name": "commerceboost-blocks",
-	"version": "1.0.0",
+	"name": "wbd-product-benefits-blocks",
+	"version": "1.0.1",
 	"description": "Lightweight WooCommerce conversion blocks for Gutenberg.",
-	"author": "CommerceBoost",
+	"author": "WPBrand Digital",
 	"license": "GPL-2.0-or-later",
 	"private": true,
 	"main": "build/product-benefits/index.js",
@@ -12,7 +12,7 @@
 		"format": "wp-scripts format",
 		"lint:js": "wp-scripts lint-js src",
 		"lint:css": "wp-scripts lint-style \"src/**/*.scss\"",
-		"make-pot": "wp i18n make-pot . languages/commerceboost-blocks.pot --exclude=node_modules,src,vendor",
+		"make-pot": "wp i18n make-pot . languages/wbd-product-benefits-blocks.pot --exclude=node_modules,src,vendor",
 		"plugin-zip": "wp-scripts plugin-zip"
 	},
 	"files": [
@@ -20,7 +20,7 @@
 		"includes",
 		"languages",
 		"src",
-		"commerceboost-blocks.php",
+		"wbd-product-benefits-blocks.php",
 		"readme.txt",
 		"uninstall.php",
 		"package.json",

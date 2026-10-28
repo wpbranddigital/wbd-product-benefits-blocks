@@ -6,7 +6,7 @@
  * registers it from block.json and makes sure its frontend stylesheet is only
  * printed on requests where the block is actually rendered.
  *
- * @package CommerceBoost_Blocks
+ * @package WBD_Product_Benefits_Blocks
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,14 +16,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Product Benefits block module.
  */
-final class CommerceBoost_Blocks_Product_Benefits {
+final class WBD_Product_Benefits_Blocks_Product_Benefits {
 
 	/**
 	 * Block name.
 	 *
 	 * @var string
 	 */
-	const NAME = 'commerceboost/product-benefits';
+	const NAME = 'wbd/product-benefits';
 
 	/**
 	 * Build folder name.
@@ -36,7 +36,7 @@ final class CommerceBoost_Blocks_Product_Benefits {
 	 * Registers the block type and related hooks.
 	 */
 	public static function register() {
-		$path = CommerceBoost_Blocks::get_block_build_path( self::DIR );
+		$path = WBD_Product_Benefits_Blocks::get_block_build_path( self::DIR );
 
 		if ( ! file_exists( $path . '/block.json' ) ) {
 			return;
@@ -50,7 +50,7 @@ final class CommerceBoost_Blocks_Product_Benefits {
 
 		if ( ! empty( $block_type->editor_script_handles ) ) {
 			foreach ( $block_type->editor_script_handles as $handle ) {
-				wp_set_script_translations( $handle, 'commerceboost-blocks', COMMERCEBOOST_BLOCKS_PATH . 'languages' );
+				wp_set_script_translations( $handle, 'wbd-product-benefits-blocks', WBD_PRODUCT_BENEFITS_BLOCKS_PATH . 'languages' );
 			}
 		}
 
