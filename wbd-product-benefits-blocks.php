@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       WBD Product Benefits Blocks
  * Description:       Lightweight WooCommerce conversion blocks for Gutenberg. Build product benefits, trust badges and conversion-focused product sections without a page builder.
- * Version:           1.0.1
+ * Version:           1.0.2
  * Requires at least: 6.5
  * Requires PHP:      7.4
  * Author:            WPBrand Digital
