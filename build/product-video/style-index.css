@@ -1,0 +1,232 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/product-video/style.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+/**
+ * Product Videos — cards, gallery button and lightbox.
+ */
+.wbd-pvideos {
+  --wbd-pvideo-accent: #e11d48;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  margin: 0 0 1.5em;
+}
+
+.wbd-pvideo {
+  margin: 0;
+}
+.wbd-pvideo__facade, .wbd-pvideo__frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/9;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 10px;
+  background: #111;
+}
+.wbd-pvideo__facade {
+  cursor: pointer;
+}
+.wbd-pvideo__facade:focus-visible {
+  outline: 3px solid var(--wbd-pvideo-accent);
+  outline-offset: 3px;
+}
+.wbd-pvideo__facade:hover .wbd-pvideo__play {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+.wbd-pvideo__poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+.wbd-pvideo__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: var(--wbd-pvideo-accent);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease;
+}
+.wbd-pvideo__play::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  border-width: 12px 0 12px 20px;
+  border-style: solid;
+  border-color: transparent transparent transparent #fff;
+  transform: translate(-50%, -50%);
+}
+.wbd-pvideo__player {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #000;
+}
+.wbd-pvideo__title {
+  margin: 8px 0 0;
+  font-size: 0.95em;
+  font-weight: 600;
+}
+
+.woocommerce-product-gallery.wbd-has-video {
+  position: relative;
+}
+
+.wbd-pvideo-open {
+  --wbd-pvideo-accent: #e11d48;
+  position: absolute;
+  z-index: 9;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  border: 0;
+  background: var(--wbd-pvideo-accent);
+  color: #fff;
+  font-family: inherit;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+.wbd-pvideo-open:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px var(--wbd-pvideo-accent);
+}
+.wbd-pvideo-open__icon {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-width: 7px 0 7px 11px;
+  border-style: solid;
+  border-color: transparent transparent transparent currentcolor;
+}
+.wbd-pvideo-open--pill {
+  bottom: 16px;
+  inset-inline-start: 16px;
+  padding: 11px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+}
+.wbd-pvideo-open--center {
+  top: 50%;
+  left: 50%;
+  justify-content: center;
+  width: 76px;
+  height: 76px;
+  padding: 0;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.wbd-pvideo-open--center .wbd-pvideo-open__icon {
+  margin-left: 5px;
+  border-width: 13px 0 13px 21px;
+}
+.wbd-pvideo-open--center .wbd-pvideo-open__text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.wbd-pvideo-dialog {
+  width: min(960px, 100vw - 32px);
+  max-width: none;
+  max-height: calc(100vh - 32px);
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+}
+.wbd-pvideo-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.85);
+}
+.wbd-pvideo-dialog__inner {
+  position: relative;
+}
+.wbd-pvideo-dialog__stage {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #000;
+}
+.wbd-pvideo-dialog__stage .wbd-pvideo__player {
+  width: 100%;
+  height: 100%;
+}
+.wbd-pvideo-dialog__close {
+  position: absolute;
+  top: -44px;
+  inset-inline-end: 0;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #111;
+  font-size: 24px;
+  line-height: 38px;
+  cursor: pointer;
+}
+.wbd-pvideo-dialog__close:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+.wbd-pvideo-dialog__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.wbd-pvideo-dialog__list:empty {
+  display: none;
+}
+.wbd-pvideo-dialog__item {
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.wbd-pvideo-dialog__item.is-active {
+  border-color: #fff;
+  background: #fff;
+  color: #111;
+}
+
+@media (max-width: 599px) {
+  .wbd-pvideo-open--pill {
+    bottom: 10px;
+    inset-inline-start: 10px;
+    padding: 9px 13px;
+    font-size: 13px;
+  }
+  .wbd-pvideo-dialog__close {
+    top: -42px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wbd-pvideo__play {
+    transition: none;
+  }
+}
+
+/*# sourceMappingURL=style-index.css.map*/

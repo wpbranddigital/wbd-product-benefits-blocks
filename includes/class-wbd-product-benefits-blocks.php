@@ -52,7 +52,12 @@ final class WBD_Product_Benefits_Blocks {
 		$this->load_dependencies();
 
 		add_filter( 'block_categories_all', array( $this, 'register_block_category' ), 10, 1 );
+		add_action( 'plugins_loaded', array( $this, 'init_woocommerce_features' ), 20 );
 		add_action( 'init', array( $this, 'register_blocks' ) );
+
+		if ( is_admin() ) {
+			WBD_Product_Benefits_Blocks_Admin_Dashboard::init();
+		}
 	}
 
 	/**
@@ -60,6 +65,51 @@ final class WBD_Product_Benefits_Blocks {
 	 */
 	private function load_dependencies() {
 		require_once WBD_PRODUCT_BENEFITS_BLOCKS_PATH . 'includes/blocks/class-product-benefits.php';
+		require_once WBD_PRODUCT_BENEFITS_BLOCKS_PATH . 'includes/sticky-add-to-cart/class-sticky-settings.php';
+		require_once WBD_PRODUCT_BENEFITS_BLOCKS_PATH . 'includes/sticky-add-to-cart/class-sticky-renderer.php';
+		require_once WBD_PRODUCT_BENEFITS_BLOCKS_PATH . 'includes/blocks/class-sticky-add-to-cart.php';
+		require_once WBD_PRODUCT_BENEFITS_BLOCKS_PATH . 'includes/woo-kit/class-kit-module.php';
+		require_once WBD_PRODUCT_BENEFITS_BLOCKS_PATH . 'includes/woo-kit/class-kit.php';
+		require_once WBD_PRODUCT_BENEFITS_BLOCKS_PATH . 'includes/woo-kit/class-kit-bundle-engine.php';
+		require_once WBD_PRODUCT_BENEFITS_BLOCKS_PATH . 'includes/admin/class-admin-dashboard.php';
+
+		$modules = glob( WBD_PRODUCT_BENEFITS_BLOCKS_PATH . 'includes/woo-kit/modules/class-module-*.php' );
+		if ( $modules ) {
+			sort( $modules );
+			foreach ( $modules as $module_file ) {
+				require_once $module_file;
+			}
+		}
+	}
+
+	/**
+	 * Whether WooCommerce is active. Only reliable from plugins_loaded on.
+	 *
+	 * @return bool
+	 */
+	public static function is_woocommerce_active() {
+		return class_exists( 'WooCommerce' ) && function_exists( 'wc_get_product' );
+	}
+
+	/**
+	 * Boots the WooCommerce-only features (Sticky Add to Cart).
+	 */
+	public function init_woocommerce_features() {
+		if ( ! self::is_woocommerce_active() ) {
+			return;
+		}
+
+		WBD_Product_Benefits_Blocks_Sticky_Settings::init();
+		WBD_Product_Benefits_Blocks_Sticky_Renderer::init();
+
+		// Bundle/Composite classes are always loaded so existing products of
+		// these types are never treated as simple products (and sold without
+		// their contents) while the feature is switched off.
+		require_once WBD_PRODUCT_BENEFITS_BLOCKS_PATH . 'includes/woo-kit/class-kit-product-types.php';
+		// Modules use translated labels, so boot them on init (WordPress 6.7+
+		// warns when a text domain loads earlier). Priority 0 keeps them ahead
+		// of their own init callbacks.
+		add_action( 'init', array( 'WBD_PBB_Kit', 'init' ), 0 );
 	}
 
 	/**
@@ -68,9 +118,15 @@ final class WBD_Product_Benefits_Blocks {
 	 * @return string[]
 	 */
 	private function get_block_classes() {
-		return array(
+		$classes = array(
 			'WBD_Product_Benefits_Blocks_Product_Benefits',
 		);
+
+		if ( self::is_woocommerce_active() ) {
+			$classes[] = 'WBD_Product_Benefits_Blocks_Sticky_Add_To_Cart';
+		}
+
+		return $classes;
 	}
 
 	/**

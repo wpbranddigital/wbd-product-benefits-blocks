@@ -1,0 +1,23 @@
+/* WBD Woo Kit — dashboard. */
+.wbd-kit__intro { max-width: 760px; font-size: 14px; }
+.wbd-kit__tabs { margin-bottom: 16px; }
+.wbd-kit__off { margin-left: 4px; padding: 0 6px; border-radius: 8px; background: #dcdcde; color: #50575e; font-size: 11px; font-weight: 400; }
+.wbd-kit__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; max-width: 1100px; }
+.wbd-kit__card { margin-bottom: 16px; padding: 4px 20px 14px; border: 1px solid #dcdcde; border-radius: 6px; background: #fff; }
+.wbd-kit__grid .wbd-kit__card { margin: 0; padding: 16px; }
+.wbd-kit__card h2 { margin: 16px 0 6px; font-size: 15px; }
+.wbd-kit__card p { margin: 8px 0 10px; color: #50575e; }
+.wbd-kit__switch { display: flex; gap: 8px; align-items: center; font-size: 14px; }
+.wbd-kit__layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 360px); gap: 20px; align-items: start; max-width: 1240px; }
+.wbd-kit__help ol { margin: 8px 0 4px 18px; }
+.wbd-kit__help li { margin-bottom: 10px; line-height: 1.5; }
+.wbd-kit .form-table th { width: 200px; }
+@media (max-width: 1000px) {
+	.wbd-kit__layout { grid-template-columns: minmax(0, 1fr); }
+	.wbd-kit__help { order: -1; }
+}
+@media (max-width: 782px) {
+	.wbd-kit .form-table th { width: auto; }
+	.wbd-kit__tabs { display: flex; flex-wrap: wrap; gap: 4px; border-bottom: 0; }
+	.wbd-kit__tabs .nav-tab { margin: 0; }
+}

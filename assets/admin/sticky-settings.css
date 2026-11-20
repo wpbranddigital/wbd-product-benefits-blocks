@@ -1,0 +1,209 @@
+/* Sticky Add to Cart — settings page. */
+
+.wbd-satc-admin__intro {
+	max-width: 760px;
+	font-size: 14px;
+}
+
+.wbd-satc-admin__layout {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+	gap: 20px;
+	align-items: start;
+	margin-top: 16px;
+}
+
+.wbd-satc-admin__card {
+	margin-bottom: 20px;
+	padding: 4px 20px 12px;
+	border: 1px solid #dcdcde;
+	border-radius: 6px;
+	background: #fff;
+}
+
+.wbd-satc-admin__card h2 {
+	margin: 16px 0 4px;
+	font-size: 15px;
+}
+
+.wbd-satc-admin__card .form-table th {
+	width: 170px;
+}
+
+.wbd-satc-admin__check {
+	display: block;
+	margin: 0 0 8px;
+}
+
+.wbd-satc-admin__terms {
+	max-height: 180px;
+	overflow: auto;
+	padding: 8px 10px;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+}
+
+.wbd-satc-admin__side {
+	position: sticky;
+	top: 48px;
+}
+
+.wbd-satc-admin__preview {
+	overflow: hidden;
+	margin: 12px 0 8px;
+	padding: 24px 0;
+	border-radius: 6px;
+	background: repeating-linear-gradient(45deg, #f6f7f7, #f6f7f7 10px, #f0f0f1 10px, #f0f0f1 20px);
+}
+
+/* The preview column is narrow: use the compact layout. */
+.wbd-satc-admin__preview .wbd-satc__inner {
+	flex-wrap: wrap;
+	padding: 10px 12px;
+}
+
+.wbd-satc-admin__preview .wbd-satc__product {
+	flex-basis: 100%;
+}
+
+.wbd-satc-admin__preview .wbd-satc__actions {
+	flex: 1 1 auto;
+}
+
+.wbd-satc-admin__preview .wbd-satc__button {
+	flex: 1 1 auto;
+}
+
+/* Template picker */
+.wbd-satc-admin__templates {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
+	gap: 10px;
+	max-width: 560px;
+}
+
+.wbd-satc-admin__template {
+	position: relative;
+	display: block;
+	padding: 8px;
+	border: 2px solid #dcdcde;
+	border-radius: 6px;
+	background: #fff;
+	text-align: center;
+	cursor: pointer;
+}
+
+.wbd-satc-admin__template input {
+	position: absolute;
+	opacity: 0;
+}
+
+.wbd-satc-admin__template:has(input:checked) {
+	border-color: var(--wp-admin-theme-color, #2271b1);
+	box-shadow: 0 0 0 1px var(--wp-admin-theme-color, #2271b1);
+}
+
+.wbd-satc-admin__template:has(input:focus-visible) {
+	outline: 2px solid var(--wp-admin-theme-color, #2271b1);
+	outline-offset: 2px;
+}
+
+.wbd-satc-admin__template-thumb {
+	position: relative;
+	display: block;
+	height: 54px;
+	margin-bottom: 6px;
+	overflow: hidden;
+	border-radius: 4px;
+	background: #f0f0f1;
+}
+
+.wbd-satc-admin__template-thumb span {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 16px;
+	background: #fff;
+	box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.wbd-satc-admin__template-thumb span::after {
+	content: "";
+	position: absolute;
+	top: 4px;
+	right: 6px;
+	width: 26px;
+	height: 8px;
+	border-radius: 2px;
+	background: #1e1e1e;
+}
+
+.wbd-satc-admin__template--minimal .wbd-satc-admin__template-thumb span {
+	height: 12px;
+	box-shadow: none;
+	border-top: 1px solid #c3c4c7;
+}
+
+.wbd-satc-admin__template--minimal .wbd-satc-admin__template-thumb span::after {
+	top: 2px;
+}
+
+.wbd-satc-admin__template--floating .wbd-satc-admin__template-thumb span {
+	right: 8px;
+	bottom: 6px;
+	left: 8px;
+	border-radius: 8px;
+}
+
+.wbd-satc-admin__template--floating .wbd-satc-admin__template-thumb span::after {
+	border-radius: 6px;
+}
+
+.wbd-satc-admin__template--dark .wbd-satc-admin__template-thumb span {
+	background: #111827;
+}
+
+.wbd-satc-admin__template--dark .wbd-satc-admin__template-thumb span::after {
+	background: #fbbf24;
+}
+
+.wbd-satc-admin__template-label {
+	font-weight: 600;
+}
+
+/* Shortcodes */
+.wbd-satc-admin__code {
+	display: flex;
+	gap: 8px;
+	align-items: flex-start;
+	margin-bottom: 8px;
+}
+
+.wbd-satc-admin__code code {
+	flex: 1 1 auto;
+	padding: 6px 8px;
+	font-size: 12px;
+	word-break: break-word;
+}
+
+@media (max-width: 1100px) {
+	.wbd-satc-admin__layout {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.wbd-satc-admin__side {
+		position: static;
+		grid-row: 1;
+	}
+}
+
+@media (max-width: 782px) {
+	.wbd-satc-admin__card {
+		padding-inline: 12px;
+	}
+
+	.wbd-satc-admin__card .form-table th {
+		width: auto;
+	}
+}

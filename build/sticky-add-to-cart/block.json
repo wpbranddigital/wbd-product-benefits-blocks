@@ -1,0 +1,82 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "wbd/sticky-add-to-cart",
+  "version": "1.1.0",
+  "title": "Sticky Add to Cart",
+  "category": "wbd-product-benefits",
+  "description": "A lightweight bar with the product and an Add to cart button that sticks to the screen once shoppers scroll past the main button.",
+  "keywords": [
+    "woocommerce",
+    "sticky",
+    "add to cart",
+    "buy now",
+    "cart bar",
+    "floating",
+    "wbd"
+  ],
+  "textdomain": "wbd-product-benefits-blocks",
+  "usesContext": [
+    "postId",
+    "postType"
+  ],
+  "attributes": {
+    "productId": {
+      "type": "number",
+      "default": 0
+    },
+    "template": {
+      "type": "string",
+      "enum": [
+        "",
+        "classic",
+        "minimal",
+        "floating",
+        "dark"
+      ],
+      "default": ""
+    },
+    "position": {
+      "type": "string",
+      "enum": [
+        "",
+        "bottom",
+        "top"
+      ],
+      "default": ""
+    },
+    "buttonText": {
+      "type": "string",
+      "default": ""
+    },
+    "barBackground": {
+      "type": "string",
+      "default": ""
+    },
+    "barText": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonBackground": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonTextColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "html": false,
+    "multiple": false,
+    "reusable": false,
+    "className": false,
+    "customClassName": false
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": [
+    "file:./index.css",
+    "wbd-sticky-add-to-cart"
+  ],
+  "viewScript": "file:./view.js"
+}

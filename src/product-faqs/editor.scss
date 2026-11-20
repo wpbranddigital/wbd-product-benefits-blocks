@@ -1,0 +1,11 @@
+/**
+ * Product FAQs — editor-only styles.
+ */
+
+.wp-block-wbd-product-faqs {
+	min-height: 40px;
+
+	> div > .wbd-faqs {
+		margin: 0;
+	}
+}

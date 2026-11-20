@@ -118,6 +118,30 @@ Matches WordPress core: mobile `< 600px`, tablet `600–781px`, desktop `≥ 782
 
 ---
 
+## WBD Woo Kit (WooCommerce features)
+
+Loaded only when WooCommerce is active. Booted on `init` priority 0 (modules use translated labels).
+
+| Path | Role |
+|---|---|
+| `includes/woo-kit/class-kit.php` | Module registry, on/off option `wbd_pbb_modules`, the **WooCommerce → WBD Woo Kit** page (Features tab + one settings tab per module with a "How to use" box) |
+| `includes/woo-kit/class-kit-module.php` | Base class. A module declares `fields()` (checkbox, select, text, number, color, textarea); the hub renders and sanitizes them into option `wbd_pbb_{slug}` |
+| `includes/woo-kit/modules/class-module-*.php` | One file per feature, auto-loaded: `product_faqs`, `variation_images`, `product_videos`, `bundles`, `composite`, `quick_view` |
+| `includes/woo-kit/class-kit-bundle-engine.php` | Shared cart/pricing/order engine for Bundles and Composite |
+| `includes/woo-kit/class-kit-product-types.php` | `WC_Product_Wbd_Bundle`, `WC_Product_Wbd_Composite` (always loaded; not purchasable while their feature is off) |
+| `src/product-faqs`, `src/product-video`, `src/shared` | Dynamic blocks (ServerSideRender previews) and the shared Store API product picker |
+| `assets/admin/*`, `assets/frontend/*` | Plain (unbuilt) admin and frontend scripts/styles, enqueued only where needed |
+
+Bundle engine rules:
+
+* A bundle/composite is a parent cart line plus child lines linked by `wbd_bundled_by` (children are found by that link, never by keys stored on the parent — WooCommerce may persist the session before callbacks run).
+* Pricing: `auto` (children keep prices; composite parent = base price), `auto_discount` (children discounted), `fixed` (parent carries the price, children 0).
+* Child quantity = parent quantity × unit quantity; changing a child alone is reverted; removing parent or child removes the whole set.
+
+Developer filters: `wbd_pbb_kit_modules`, `wbd_pbb_product_faqs`, `wbd_pbb_sticky_add_to_cart_display`, `wbd_pbb_sticky_add_to_cart_attributes`.
+
+---
+
 ## Block API & Extensibility
 
 Product Benefits is a standard Gutenberg block registered via `register_block_type()` using WordPress Block API v3.

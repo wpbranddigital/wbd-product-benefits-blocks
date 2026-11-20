@@ -1,0 +1,16 @@
+/* Bundles & Composite — product edit screen. */
+.wbd-items-admin { padding: 12px; }
+.wbd-items-admin__intro { margin: 0 0 12px !important; padding: 0 !important; }
+.wbd-items-admin__table { margin-bottom: 8px; }
+.wbd-items-admin__table th, .wbd-items-admin__table td { vertical-align: middle; padding: 6px 8px; }
+.wbd-items-admin__handle { width: 20px; color: #8c8f94; cursor: move; }
+.wbd-items-admin__product { min-width: 260px; }
+.woocommerce_options_panel .wbd-items-admin__qty input { float: none; width: 70px; }
+.woocommerce_options_panel .wbd-items-admin__optional label { float: none; width: auto; margin: 0; }
+.wbd-items-admin .select2-container { min-width: 220px; }
+.wbd-component-admin { margin-bottom: 10px; padding: 10px; border: 1px solid #dcdcde; border-radius: 4px; background: #fff; }
+.wbd-component-admin__head { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+.woocommerce_options_panel .wbd-component-admin__head input.wbd-component-admin__title { float: none; flex: 1 1 auto; width: auto; font-weight: 600; }
+.wbd-component-admin__row { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 8px; }
+.woocommerce_options_panel .wbd-component-admin__row label { float: none; width: auto; margin: 0; }
+.woocommerce_options_panel .wbd-component-admin__row input.small-text { float: none; width: 60px; }

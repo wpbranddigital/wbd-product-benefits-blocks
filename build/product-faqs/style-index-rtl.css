@@ -1,0 +1,161 @@
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/product-faqs/style.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+/**
+ * Product FAQs — frontend and editor styles.
+ * Built on <details>/<summary>: accessible and JavaScript-free.
+ */
+.wbd-faqs {
+  --wbd-faqs-accent: currentcolor;
+  --_line: rgba(127, 127, 127, 0.25);
+  box-sizing: border-box;
+  margin: 0 0 1.5em;
+}
+.wbd-faqs *,
+.wbd-faqs *::before,
+.wbd-faqs *::after {
+  box-sizing: border-box;
+}
+.wbd-faqs__heading {
+  margin: 0 0 0.75em;
+}
+.wbd-faqs__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.wbd-faq {
+  margin: 0;
+}
+.wbd-faq__q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 4px;
+  font-weight: 600;
+  line-height: 1.4;
+  list-style: none;
+  cursor: pointer;
+}
+.wbd-faq__q::-webkit-details-marker {
+  display: none;
+}
+.wbd-faq__q::marker {
+  content: "";
+}
+.wbd-faq__q:hover .wbd-faq__q-text {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.wbd-faq__q:focus-visible {
+  outline: 2px solid var(--wbd-faqs-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.wbd-faq__icon {
+  position: relative;
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  color: var(--wbd-faqs-accent);
+}
+.wbd-faq__icon::before, .wbd-faq__icon::after {
+  content: "";
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 0;
+  width: 16px;
+  height: 2px;
+  margin-top: -1px;
+  border-radius: 2px;
+  background: currentcolor;
+  transition: transform 0.2s ease;
+}
+.wbd-faq__icon::after {
+  transform: rotate(-90deg);
+}
+.wbd-faq[open] .wbd-faq__icon::after {
+  transform: rotate(0deg);
+}
+.wbd-faq__a {
+  padding: 0 4px 16px;
+  line-height: 1.6;
+}
+.wbd-faq__a > :first-child {
+  margin-top: 0;
+}
+.wbd-faq__a > :last-child {
+  margin-bottom: 0;
+}
+
+.wbd-faqs--icon-chevron .wbd-faq__icon::before {
+  width: 9px;
+  height: 9px;
+  margin-top: -7px;
+  inset-inline-start: 3px;
+  border-inline-end: 2px solid currentcolor;
+  border-block-end: 2px solid currentcolor;
+  border-radius: 0;
+  background: none;
+  transform: rotate(-45deg);
+}
+.wbd-faqs--icon-chevron .wbd-faq__icon::after {
+  display: none;
+}
+
+.wbd-faqs--icon-chevron .wbd-faq[open] .wbd-faq__icon::before {
+  margin-top: -2px;
+  transform: rotate(135deg);
+}
+
+.wbd-faqs--accordion .wbd-faq {
+  border-bottom: 1px solid var(--_line);
+}
+.wbd-faqs--accordion .wbd-faq:first-child {
+  border-top: 1px solid var(--_line);
+}
+
+.wbd-faqs--boxed .wbd-faqs__list {
+  gap: 10px;
+}
+.wbd-faqs--boxed .wbd-faq {
+  border: 1px solid var(--_line);
+  border-radius: 10px;
+  background: rgba(127, 127, 127, 0.04);
+}
+.wbd-faqs--boxed .wbd-faq[open] {
+  border-color: var(--wbd-faqs-accent);
+}
+.wbd-faqs--boxed .wbd-faq__q {
+  padding: 14px 18px;
+}
+.wbd-faqs--boxed .wbd-faq__a {
+  padding: 0 18px 16px;
+}
+
+.wbd-faqs--minimal .wbd-faq__q {
+  padding: 10px 0;
+  font-weight: 500;
+}
+.wbd-faqs--minimal .wbd-faq__a {
+  padding: 0 0 12px;
+  opacity: 0.85;
+}
+.wbd-faqs--minimal .wbd-faq + .wbd-faq {
+  border-top: 1px dashed var(--_line);
+}
+
+@media (max-width: 599px) {
+  .wbd-faq__q {
+    padding-block: 14px;
+    font-size: 0.97em;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wbd-faq__icon::before,
+  .wbd-faq__icon::after {
+    transition: none;
+  }
+}

@@ -1,0 +1,13 @@
+/* Product Videos — product edit screen. */
+.wbd-videos-admin { padding: 12px; }
+.wbd-videos-admin__intro { margin: 0 0 12px !important; padding: 0 !important; }
+.wbd-videos-admin__item { display: flex; gap: 8px; align-items: flex-start; margin-bottom: 10px; padding: 10px; border: 1px solid #dcdcde; border-radius: 4px; background: #fff; }
+.wbd-videos-admin__fields { flex: 1 1 auto; min-width: 0; }
+.wbd-videos-admin__url-row { display: flex; gap: 6px; margin-bottom: 6px; }
+.woocommerce_options_panel .wbd-videos-admin input.wbd-videos-admin__url,
+.woocommerce_options_panel .wbd-videos-admin input.wbd-videos-admin__title { float: none; width: 100%; margin: 0 0 6px; }
+.woocommerce_options_panel .wbd-videos-admin input.wbd-videos-admin__url { margin: 0; }
+.wbd-videos-admin__poster { display: flex; gap: 10px; align-items: center; }
+.wbd-videos-admin__poster-preview img { display: block; width: 48px; height: 48px; object-fit: cover; border-radius: 3px; }
+.wbd-videos-admin__add .dashicons { margin-top: 3px; font-size: 16px; }
+.wbd-videos-admin__remove { padding: 2px; color: #b32d2e; }

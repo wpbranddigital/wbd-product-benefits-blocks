@@ -1,0 +1,19 @@
+/* Product FAQs — product edit screen. */
+.wbd-faqs-admin { padding: 12px; }
+.wbd-faqs-admin__intro { margin: 0 0 12px !important; padding: 0 !important; }
+.wbd-faqs-admin__item { display: flex; gap: 8px; align-items: flex-start; margin-bottom: 10px; padding: 10px; border: 1px solid #dcdcde; border-radius: 4px; background: #fff; }
+.wbd-faqs-admin__handle { margin-top: 6px; color: #8c8f94; cursor: move; }
+.wbd-faqs-admin__fields { flex: 1 1 auto; min-width: 0; }
+.woocommerce_options_panel .wbd-faqs-admin__fields input.wbd-faqs-admin__q,
+.woocommerce_options_panel .wbd-faqs-admin__fields textarea.wbd-faqs-admin__a { float: none; width: 100%; margin: 0 0 6px; }
+.wbd-faqs-admin__q { font-weight: 600; }
+.wbd-faqs-admin__actions { display: flex; flex-direction: column; gap: 2px; }
+.wbd-faqs-admin__actions .button-link { padding: 2px; color: #50575e; }
+.wbd-faqs-admin__placeholder { height: 90px; margin-bottom: 10px; border: 2px dashed #c3c4c7; border-radius: 4px; }
+.wbd-faqs-admin__add .dashicons { margin-top: 3px; font-size: 16px; }
+.wbd-faqs-admin__global { margin-top: 16px; padding-top: 8px; border-top: 1px solid #f0f0f1; }
+.wbd-faqs-admin__global h4 { margin: 8px 0; }
+.wbd-faqs-admin__global p.description { margin: 0 0 8px !important; padding: 0 !important; }
+.wbd-faqs-admin__global-list { max-height: 160px; margin-bottom: 8px; overflow: auto; }
+.wbd-faqs-admin__global-list label,
+.wbd-faqs-admin__hide { display: block !important; float: none !important; width: auto !important; margin: 0 0 6px !important; }

@@ -1,0 +1,17 @@
+/**
+ * Product Video — editor-only styles.
+ */
+
+.wp-block-wbd-product-video {
+
+	.wbd-pvideo__facade {
+		pointer-events: none;
+	}
+}
+
+.wbd-pvideo-empty {
+	padding: 16px;
+	border: 1px dashed rgba(127, 127, 127, 0.5);
+	border-radius: 4px;
+	font-size: 13px;
+}
